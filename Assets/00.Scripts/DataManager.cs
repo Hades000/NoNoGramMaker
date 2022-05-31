@@ -29,22 +29,25 @@ public class DataManager : MonoBehaviour
             data += col[i] + "\n";
         }
 
-        Debug.Log(data);
-
         FileSave(data, fileName);
     }
 
     public void FileSave(string data, string fileName)
     {
-        string path = "Assets/02.Resources/PuzzleData/" + fileName;
-        StreamWriter sw = new StreamWriter(path);
+        string path = "C:/Users/user/Desktop/NoNoGram/hint/" + fileName + ".txt";
+        DirectoryInfo directoryInfo = new DirectoryInfo(Path.GetDirectoryName(path));
 
-        if(!File.Exists(path))
+        Debug.Log("Path : " + path);
+
+        if (!directoryInfo.Exists)
         {
-            sw.WriteLine(data);
+            directoryInfo.Create();
         }
 
-        sw.Flush();
-        sw.Close();
+        FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+
+        StreamWriter writer = new StreamWriter(fileStream, System.Text.Encoding.Unicode);
+        writer.WriteLine(data);
+        writer.Close();
     }
 }
