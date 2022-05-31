@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CHECK_TYPE {ROW, COL}
+
 public class Maker : MonoBehaviour
 {
     public Texture2D texture;
@@ -11,6 +13,9 @@ public class Maker : MonoBehaviour
     public Cell[,] board;
 
     public int[,] boardData;
+
+    public string[] rowHint;
+    public string[] colHint;
 
     private void Start()
     {
@@ -30,8 +35,6 @@ public class Maker : MonoBehaviour
                 boardData[size-(i+1),j] = (texture.GetPixel(j, i) == Color.black) ? 1 : 0;
             }
         }
-
-        ShowBoardState(size);
     }
 
     private void GenerateBoard(int size)
@@ -49,17 +52,10 @@ public class Maker : MonoBehaviour
         }
     }
 
-    private void ShowBoardState(int size)
+    private string MakeHintData(int idx, CHECK_TYPE type)
     {
-        for (int i = 0; i < size; i++)
-        {
-            string tmp = "";
-            for (int j = 0; j < size; j++)
-            {
-                tmp += boardData[i,j] + " ";
-            }
+        string tmp = "";
 
-            Debug.Log("Board Data" + tmp);
-        }
+        return tmp;
     }
 }
