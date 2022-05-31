@@ -18,6 +18,16 @@ public class Cell : MonoBehaviour
         RenderCell();
     }
 
+    public void SetCell(Transform parent, int width, int height, int x, int y, int data)
+    {
+        state = data;
+        transform.SetParent(parent);
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
+        transform.localPosition = new Vector2(x * width, -(y * height));
+
+        RenderCell();
+    }
+
     public void RenderCell()
     {
         if (state == 0 || state ==-1)
