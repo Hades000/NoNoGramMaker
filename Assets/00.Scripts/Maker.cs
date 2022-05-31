@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Maker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Texture2D texture;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        for(int i = 0 ; i< texture.width; i++)
+        {
+            for(int j = 0 ; j<texture.height; j++)
+            {
+                Debug.Log(texture.GetPixel(j,i));
+            }
+        }
     }
 }
