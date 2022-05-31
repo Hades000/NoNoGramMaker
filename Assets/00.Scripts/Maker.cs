@@ -17,11 +17,12 @@ public class Maker : MonoBehaviour
     {
         board = new int[size,size];
 
-        for (int i = 0; i < texture.width; i++)
+        for (int i = 0; i < size; i++)
         {
-            for (int j = 0; j < texture.height; j++)
-            {
-                board[i,j] = (texture.GetPixel(j, i) == Color.black) ? 1 : 0;
+            for (int j = 0; j < size; j++)
+            {;
+                Debug.Log($"[{i},{j}]");
+                board[size-(i+1),j] = (texture.GetPixel(j, i) == Color.black) ? 1 : 0;
             }
         }
 
