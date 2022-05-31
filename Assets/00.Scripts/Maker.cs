@@ -26,8 +26,7 @@ public class Maker : MonoBehaviour
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
-            {;
-                Debug.Log($"[{i},{j}]");
+            {
                 boardData[size-(i+1),j] = (texture.GetPixel(j, i) == Color.black) ? 1 : 0;
             }
         }
