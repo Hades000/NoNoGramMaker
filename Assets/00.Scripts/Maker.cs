@@ -76,7 +76,7 @@ public class Maker : MonoBehaviour
         }
 
         dummy[size + 1] = 0;
-
+        
 
         for (int i = 1; i < dummy.Length; i++)
         {
