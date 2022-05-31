@@ -27,6 +27,8 @@ public class Maker : MonoBehaviour
             rowHint[i] = MakeHintData(i,texture.width,CHECK_TYPE.ROW);
             colHint[i] = MakeHintData(i,texture.width,CHECK_TYPE.COL);
         }
+
+        DataManager.ins.MakeTextData(texture.width,rowHint,colHint,"Triangle");
     }
 
     private void SetBoard(int size)
