@@ -29,6 +29,11 @@ public class Maker : MonoBehaviour
         ShowBoardState(size);
     }
 
+    private void GenerateBoard()
+    {
+        
+    }
+
     private void ShowBoardState(int size)
     {
         for (int i = 0; i < size; i++)
