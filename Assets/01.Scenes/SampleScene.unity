@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6cd3ce26043d045b1cdc48847ee937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: 620e6c6c73179bb4bb5f772a8ef032fc, type: 3}
+  texture: {fileID: 2800000, guid: ced8fdc8734cd0a4d9c9213adbb41f4f, type: 3}
   cellParent: {fileID: 846474803}
   cellPrefabs: {fileID: 4506582953447665241, guid: 01e3c928db789b04da0f4a6f34050e3f, type: 3}
   rowHint: []
